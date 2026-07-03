@@ -18,14 +18,14 @@ export function StatsSection() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative overflow-hidden" style={{ background: "var(--color-steel)" }}>
+    <section className="relative overflow-hidden" style={{ background: "#fffdf5" }}>
       {/* Engineering grid overlay */}
       <div className="eng-grid absolute inset-0 opacity-20" />
 
-      {/* Cyan accent line top */}
+      {/* Yellow accent line top */}
       <div
         className="absolute top-0 left-0 right-0 h-px"
-        style={{ background: "linear-gradient(90deg, transparent, var(--color-cyan), transparent)" }}
+        style={{ background: "linear-gradient(90deg, transparent, var(--color-yellow), transparent)" }}
       />
 
       <div className="container-wide relative px-5 py-16 md:px-10 lg:px-16">
@@ -45,9 +45,9 @@ export function StatsSection() {
           {stats.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 0.07}>
               <div
-                className="group relative px-6 py-8 transition-colors duration-300 hover:bg-white/4"
+                className="group relative px-6 py-8 transition-colors duration-300 hover:bg-yellow/5"
                 style={{
-                  borderRight: i < stats.length - 1 ? "1px solid rgba(255,255,255,0.08)" : "none",
+                  borderRight: i < stats.length - 1 ? "1px solid rgba(8,17,31,0.08)" : "none",
                 }}
               >
                 {/* Number */}
@@ -59,7 +59,7 @@ export function StatsSection() {
                     fontWeight: 800,
                     lineHeight: 1,
                     letterSpacing: "-0.04em",
-                    color: "var(--color-cyan)",
+                    color: "var(--color-yellow)",
                     transition: "color 0.3s",
                   }}
                 >
@@ -68,7 +68,7 @@ export function StatsSection() {
                     className=""
                   />
                   {stat.suffix && (
-                    <span style={{ fontSize: "0.55em", color: "rgba(0,212,255,0.6)", marginBottom: "0.1em" }}>
+                    <span style={{ fontSize: "0.55em", color: "rgba(245,197,24,0.70)", marginBottom: "0.1em" }}>
                       {stat.suffix}
                     </span>
                   )}
@@ -77,7 +77,7 @@ export function StatsSection() {
                 {/* Label */}
                 <p
                   className="mt-2 text-xs font-medium tracking-wide"
-                  style={{ color: "rgba(160,180,200,0.7)" }}
+                  style={{ color: "#4b5e72" }}
                 >
                   {stat.label}
                 </p>
@@ -89,7 +89,7 @@ export function StatsSection() {
                   whileInView={{ width: 32 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: i * 0.08 + 0.3, ease: easeOut }}
-                  style={{ background: "var(--color-cyan)", opacity: 0.5 }}
+                  style={{ background: "var(--color-yellow)", opacity: 0.6 }}
                 />
               </div>
             </Reveal>
@@ -100,7 +100,7 @@ export function StatsSection() {
       {/* Bottom accent line */}
       <div
         className="absolute bottom-0 left-0 right-0 h-px"
-        style={{ background: "linear-gradient(90deg, transparent, rgba(0,212,255,0.3), transparent)" }}
+        style={{ background: "linear-gradient(90deg, transparent, rgba(245,197,24,0.45), transparent)" }}
       />
     </section>
   );

@@ -79,7 +79,7 @@ export function Header() {
                 className={cn(
                   "group relative flex items-center gap-1.5 px-3.5 py-2 text-[13px] font-medium tracking-wide transition-colors duration-200",
                   active
-                    ? "text-cyan"
+                    ? "text-yellow"
                     : "text-white/55 hover:text-white/90"
                 )}
                 style={{ fontFamily: "var(--font-display)" }}
@@ -96,7 +96,7 @@ export function Header() {
                 <span
                   className="absolute bottom-0 left-3.5 right-3.5 h-px transition-all duration-300"
                   style={{
-                    background: active ? "var(--color-cyan)" : "transparent",
+                    background: active ? "var(--color-yellow)" : "transparent",
                     opacity: active ? 1 : 0,
                   }}
                 />
@@ -112,9 +112,9 @@ export function Header() {
             className="hidden sm:inline-flex items-center gap-1.5 px-5 py-2 text-[13px] font-semibold text-ink transition-all duration-200 hover:-translate-y-px"
             style={{
               fontFamily: "var(--font-display)",
-              background: "var(--color-cyan)",
+              background: "var(--color-yellow)",
               clipPath: "polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))",
-              boxShadow: "var(--shadow-cyan)",
+              boxShadow: "var(--shadow-yellow)",
             }}
           >
             Liên hệ ngay
@@ -180,8 +180,8 @@ export function Header() {
                     }}
                   >
                     <span
-                      className="font-mono text-[10px] text-cyan/60"
-                      style={{ fontFamily: "var(--font-mono)", color: "var(--color-cyan)", opacity: 0.5 }}
+                      className="font-mono text-[10px] text-yellow/60"
+                      style={{ fontFamily: "var(--font-mono)", color: "var(--color-yellow)", opacity: 0.5 }}
                     >
                       {String(i + 1).padStart(2, "0")}
                     </span>
@@ -202,7 +202,7 @@ export function Header() {
                   className="block py-4 text-center text-sm font-semibold text-ink"
                   style={{
                     fontFamily: "var(--font-display)",
-                    background: "var(--color-cyan)",
+                    background: "var(--color-yellow)",
                     clipPath: "polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))",
                   }}
                 >

@@ -58,11 +58,11 @@ export function HeroSection({
           sizes="100vw"
           quality={85}
         />
-        {/* Dark overlay layers */}
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/50" />
+        {/* Lighter overlay — image breathes through */}
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/50 to-ink/5" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/78 via-transparent to-ink/20" />
         {/* Engineering grid */}
-        <div className="eng-grid absolute inset-0 opacity-30" />
+        <div className="eng-grid absolute inset-0 opacity-15" />
         {/* Noise texture */}
         <div className="noise-overlay absolute inset-0" />
       </motion.div>

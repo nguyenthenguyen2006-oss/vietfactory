@@ -22,18 +22,18 @@ export function CTASection({
   return (
     <section
       className="relative overflow-hidden section-pad"
-      style={{ background: dark ? "var(--color-steel)" : "var(--color-paper)" }}
+      style={{ background: dark ? "var(--color-slate)" : "var(--color-paper)" }}
     >
       {/* Engineering grid */}
       {dark && <div className="eng-grid absolute inset-0 opacity-20" />}
 
-      {/* Cyan corner accent */}
+      {/* Yellow corner accent */}
       {dark && (
         <>
-          <div className="absolute left-0 top-0 h-px w-32" style={{ background: "var(--color-cyan)", opacity: 0.5 }} />
-          <div className="absolute left-0 top-0 h-32 w-px" style={{ background: "var(--color-cyan)", opacity: 0.5 }} />
-          <div className="absolute right-0 bottom-0 h-px w-32" style={{ background: "var(--color-cyan)", opacity: 0.3 }} />
-          <div className="absolute right-0 bottom-0 h-32 w-px" style={{ background: "var(--color-cyan)", opacity: 0.3 }} />
+          <div className="absolute left-0 top-0 h-px w-32" style={{ background: "var(--color-yellow)", opacity: 0.5 }} />
+          <div className="absolute left-0 top-0 h-32 w-px" style={{ background: "var(--color-yellow)", opacity: 0.5 }} />
+          <div className="absolute right-0 bottom-0 h-px w-32" style={{ background: "var(--color-yellow)", opacity: 0.3 }} />
+          <div className="absolute right-0 bottom-0 h-32 w-px" style={{ background: "var(--color-yellow)", opacity: 0.3 }} />
         </>
       )}
 
@@ -78,12 +78,12 @@ export function CTASection({
                   <div
                     className="flex h-10 w-10 items-center justify-center transition-all duration-200 group-hover:scale-105"
                     style={{
-                      background: "rgba(0,212,255,0.12)",
-                      border: "1px solid rgba(0,212,255,0.2)",
+                      background: "rgba(245,197,24,0.12)",
+                      border: "1px solid rgba(245,197,24,0.25)",
                       clipPath: "polygon(0 0, calc(100% - 5px) 0, 100% 5px, 100% 100%, 5px 100%, 0 calc(100% - 5px))",
                     }}
                   >
-                    <Phone size={16} weight="fill" style={{ color: "var(--color-cyan)" }} />
+                    <Phone size={16} weight="fill" style={{ color: "var(--color-yellow)" }} />
                   </div>
                   <div>
                     <p className="text-[11px] font-medium uppercase tracking-widest" style={{ color: "var(--color-smoke)" }}>
@@ -102,12 +102,12 @@ export function CTASection({
                   <div
                     className="flex h-10 w-10 items-center justify-center transition-all duration-200 group-hover:scale-105"
                     style={{
-                      background: "rgba(0,212,255,0.12)",
-                      border: "1px solid rgba(0,212,255,0.2)",
+                      background: "rgba(245,197,24,0.12)",
+                      border: "1px solid rgba(245,197,24,0.25)",
                       clipPath: "polygon(0 0, calc(100% - 5px) 0, 100% 5px, 100% 100%, 5px 100%, 0 calc(100% - 5px))",
                     }}
                   >
-                    <EnvelopeSimple size={16} weight="fill" style={{ color: "var(--color-cyan)" }} />
+                    <EnvelopeSimple size={16} weight="fill" style={{ color: "var(--color-yellow)" }} />
                   </div>
                   <div>
                     <p className="text-[11px] font-medium uppercase tracking-widest" style={{ color: "var(--color-smoke)" }}>
@@ -155,11 +155,11 @@ export function CTASection({
             {/* Corner accent */}
             <div
               className="absolute right-0 top-0 h-px w-16"
-              style={{ background: "var(--color-cyan)", opacity: 0.5 }}
+              style={{ background: "var(--color-yellow)", opacity: 0.5 }}
             />
             <div
               className="absolute right-0 top-0 h-16 w-px"
-              style={{ background: "var(--color-cyan)", opacity: 0.5 }}
+              style={{ background: "var(--color-yellow)", opacity: 0.5 }}
             />
 
             <ContactForm variant={dark ? "dark" : "light"} />

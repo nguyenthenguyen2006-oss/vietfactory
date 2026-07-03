@@ -60,9 +60,9 @@ export function WhyUsSection() {
 
                   {/* Icon */}
                   <div
-                    className="mb-5 flex h-11 w-11 items-center justify-center transition-all duration-300 group-hover:bg-cyan"
+                    className="mb-5 flex h-11 w-11 items-center justify-center transition-all duration-300 group-hover:bg-yellow"
                     style={{
-                      background: "rgba(0,212,255,0.10)",
+                      background: "rgba(245,197,24,0.12)",
                       clipPath: "polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px))",
                     }}
                   >
@@ -84,10 +84,10 @@ export function WhyUsSection() {
                     {item.description}
                   </p>
 
-                  {/* Bottom cyan line on hover */}
+                  {/* Bottom yellow line on hover */}
                   <div
                     className="absolute bottom-0 left-7 h-px opacity-0 transition-all duration-400 group-hover:opacity-100"
-                    style={{ width: "40px", background: "var(--color-cyan)" }}
+                    style={{ width: "40px", background: "var(--color-yellow)" }}
                   />
                 </motion.div>
               </Reveal>

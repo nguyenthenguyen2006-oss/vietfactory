@@ -9,26 +9,31 @@
   --color-graphite:   #2a3d55;
   --color-smoke:      #7a93aa;
   --color-mist:       #a0b4c8;
-  --color-paper:      #f4f6f8;
+  --color-paper:      #fffdf5;
   --color-white:      #ffffff;
 
-  /* Accent */
-  --color-cyan:       #00d4ff;
-  --color-cyan-deep:  #00aacc;
-  --color-cyan-glow:  rgba(0, 212, 255, 0.18);
-  --color-logo-yellow: #f4c542;
+  /* Accent — Golden Yellow */
+  --color-yellow:       #f5c518;
+  --color-yellow-deep:  #d4a017;
+  --color-yellow-glow:  rgba(245, 197, 24, 0.18);
+  --color-logo-yellow:  #f5c518;
 
-  /* Legacy aliases (backward compat) */
+  /* Legacy aliases — remapped to yellow */
   --color-navy:         #08111f;
   --color-navy-light:   #111d2e;
   --color-navy-mid:     #1a2d42;
   --color-charcoal:     #1a2d42;
   --color-slate-muted:  #7a93aa;
-  --color-cold:         #dce6ef;
-  --color-surface:      #f4f6f8;
-  --color-accent:       #00d4ff;
-  --color-accent-deep:  #00aacc;
-  --color-accent-glow:  rgba(0, 212, 255, 0.18);
+  --color-cold:         #e8edf2;
+  --color-surface:      #fffdf5;
+  --color-accent:       #f5c518;
+  --color-accent-deep:  #d4a017;
+  --color-accent-glow:  rgba(245, 197, 24, 0.18);
+
+  /* Cyan kept for backward compat but remapped to yellow */
+  --color-cyan:         #f5c518;
+  --color-cyan-deep:    #d4a017;
+  --color-cyan-glow:    rgba(245, 197, 24, 0.18);
 
   /* Fonts */
   --font-display: var(--font-syne), "Syne", system-ui, sans-serif;
@@ -39,13 +44,14 @@
   --shadow-sm:  0 2px 16px rgba(8, 17, 31, 0.12);
   --shadow-md:  0 8px 40px rgba(8, 17, 31, 0.20);
   --shadow-lg:  0 20px 80px rgba(8, 17, 31, 0.35);
-  --shadow-cyan: 0 8px 32px rgba(0, 212, 255, 0.22);
+  --shadow-cyan:    0 8px 32px rgba(245, 197, 24, 0.28);
+  --shadow-yellow:  0 8px 32px rgba(245, 197, 24, 0.28);
 
   /* Legacy shadow aliases */
   --shadow-navy-sm: 0 2px 16px rgba(8, 17, 31, 0.12);
   --shadow-navy-md: 0 8px 40px rgba(8, 17, 31, 0.20);
   --shadow-navy-lg: 0 20px 80px rgba(8, 17, 31, 0.35);
-  --shadow-accent:  0 8px 32px rgba(0, 212, 255, 0.22);
+  --shadow-accent:  0 8px 32px rgba(245, 197, 24, 0.28);
 }
 
 /* ─── Base ───────────────────────────────────────────────────── */
@@ -74,7 +80,7 @@
   }
 
   ::selection {
-    background: rgba(0, 212, 255, 0.25);
+    background: rgba(245, 197, 24, 0.30);
     color: #08111f;
   }
 
@@ -108,15 +114,15 @@
   .mesh-dark,
   .mesh-navy {
     background:
-      radial-gradient(ellipse 70% 50% at 15% 10%, rgba(0,212,255,0.08) 0%, transparent 60%),
-      radial-gradient(ellipse 50% 40% at 85% 90%, rgba(0,170,204,0.06) 0%, transparent 50%),
+      radial-gradient(ellipse 70% 50% at 15% 10%, rgba(245,197,24,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 85% 90%, rgba(212,160,23,0.05) 0%, transparent 50%),
       linear-gradient(175deg, #08111f 0%, #111d2e 60%, #0d1827 100%);
   }
 
   .mesh-light,
   .mesh-surface {
     background:
-      radial-gradient(ellipse 60% 40% at 0% 0%, rgba(0,212,255,0.05) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 40% at 0% 0%, rgba(245,197,24,0.06) 0%, transparent 50%),
       radial-gradient(ellipse 40% 30% at 100% 100%, rgba(8,17,31,0.04) 0%, transparent 45%),
       #f4f6f8;
   }
@@ -125,16 +131,16 @@
   .eng-grid,
   .industrial-grid {
     background-image:
-      linear-gradient(rgba(0,212,255,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,212,255,0.04) 1px, transparent 1px);
+      linear-gradient(rgba(245,197,24,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245,197,24,0.05) 1px, transparent 1px);
     background-size: 64px 64px;
   }
 
   .eng-grid-dense,
   .industrial-grid-dense {
     background-image:
-      linear-gradient(rgba(0,212,255,0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,212,255,0.06) 1px, transparent 1px);
+      linear-gradient(rgba(245,197,24,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245,197,24,0.07) 1px, transparent 1px);
     background-size: 32px 32px;
   }
 
@@ -179,19 +185,19 @@
     font-weight: 600;
     letter-spacing: 0.04em;
     color: var(--color-ink);
-    background: var(--color-cyan);
+    background: var(--color-yellow);
     border: none;
     clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: var(--shadow-cyan);
+    box-shadow: var(--shadow-yellow);
     cursor: pointer;
     text-decoration: none;
   }
 
   .btn-primary:hover {
-    background: var(--color-cyan-deep);
+    background: var(--color-yellow-deep);
     transform: translateY(-2px);
-    box-shadow: 0 16px 48px rgba(0,212,255,0.35);
+    box-shadow: 0 16px 48px rgba(245,197,24,0.40);
   }
 
   .btn-primary:active {
@@ -218,9 +224,9 @@
   }
 
   .btn-ghost:hover {
-    border-color: rgba(0,212,255,0.45);
+    border-color: rgba(245,197,24,0.50);
     color: #ffffff;
-    background: rgba(0,212,255,0.08);
+    background: rgba(245,197,24,0.10);
     transform: translateY(-2px);
   }
 
@@ -242,12 +248,12 @@
   .line-accent {
     display: block;
     height: 2px;
-    background: linear-gradient(90deg, var(--color-cyan), transparent);
+    background: linear-gradient(90deg, var(--color-yellow), transparent);
   }
 
-  /* ── Cyan glow ── */
+  /* ── Yellow glow ── */
   .glow-accent {
-    box-shadow: 0 0 0 1px rgba(0,212,255,0.25), var(--shadow-cyan);
+    box-shadow: 0 0 0 1px rgba(245,197,24,0.30), var(--shadow-yellow);
   }
 
   /* ── Engineering number (ghost behind section) ── */
@@ -257,7 +263,7 @@
     font-size: clamp(80px, 14vw, 200px);
     line-height: 1;
     letter-spacing: -0.05em;
-    background: linear-gradient(180deg, rgba(0,212,255,0.10) 0%, transparent 100%);
+    background: linear-gradient(180deg, rgba(245,197,24,0.12) 0%, transparent 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -298,7 +304,7 @@
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.08em;
-    color: var(--color-cyan);
+    color: var(--color-yellow);
   }
 
   .section-label::before {
@@ -306,7 +312,7 @@
     display: block;
     width: 32px;
     height: 1.5px;
-    background: var(--color-cyan);
+    background: var(--color-yellow);
     flex-shrink: 0;
   }
 

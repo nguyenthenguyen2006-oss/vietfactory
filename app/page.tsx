@@ -5,7 +5,6 @@ import { LazyMount } from "@/components/LazyMount";
 import { ProcessSection } from "@/components/ProcessSection";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ServiceCard } from "@/components/ServiceCard";
-import { StatsSection } from "@/components/StatsSection";
 import { ProjectShowcaseSection } from "@/components/ProjectShowcaseSection";
 import { WhyUsSection } from "@/components/WhyUsSection";
 import { services } from "@/data/services";
@@ -18,7 +17,6 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <StatsSection />
 
       {/* Services */}
       <section className="section-pad" style={{ background: "var(--color-paper)" }}>

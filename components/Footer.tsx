@@ -11,15 +11,15 @@ export function Footer() {
   return (
     <footer
       className="relative overflow-hidden"
-      style={{ background: "var(--color-ink)", color: "white" }}
+      style={{ background: "var(--color-steel)", color: "white" }}
     >
       {/* Engineering grid */}
       <div className="eng-grid-dense absolute inset-0 opacity-10" />
 
-      {/* Cyan top accent line */}
+      {/* Yellow top accent line */}
       <div
         className="absolute top-0 left-0 right-0 h-px"
-        style={{ background: "linear-gradient(90deg, transparent, var(--color-cyan), transparent)" }}
+        style={{ background: "linear-gradient(90deg, transparent, var(--color-yellow), transparent)" }}
       />
 
       {/* Ghost "VF" watermark */}
@@ -83,7 +83,7 @@ export function Footer() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-1 text-xs font-medium uppercase tracking-wider text-white/35 transition-colors duration-200 hover:text-cyan"
+                    className="group flex items-center gap-1 text-xs font-medium uppercase tracking-wider text-white/35 transition-colors duration-200 hover:text-yellow"
                     style={{ color: "rgba(255,255,255,0.35)" }}
                   >
                     {s.label}
@@ -99,7 +99,7 @@ export function Footer() {
             <Reveal delay={0.07}>
               <p
                 className="mb-4 text-[11px] font-semibold tracking-wide"
-                style={{ color: "var(--color-cyan)" }}
+                style={{ color: "var(--color-yellow)" }}
               >
                 Dịch vụ
               </p>
@@ -110,7 +110,7 @@ export function Footer() {
                       href={item.href}
                       className="group flex items-center gap-1.5 text-sm text-white/45 transition-colors duration-200 hover:text-white"
                     >
-                      <span className="h-px w-3 bg-white/20 transition-all duration-200 group-hover:w-4 group-hover:bg-cyan" />
+                      <span className="h-px w-3 bg-white/20 transition-all duration-200 group-hover:w-4" style={{ backgroundColor: undefined }} />
                       {item.label}
                     </Link>
                   </li>
@@ -121,7 +121,7 @@ export function Footer() {
             <Reveal delay={0.11}>
               <p
                 className="mb-4 text-[11px] font-semibold tracking-wide"
-                style={{ color: "var(--color-cyan)" }}
+                style={{ color: "var(--color-yellow)" }}
               >
                 Công ty
               </p>
@@ -132,7 +132,7 @@ export function Footer() {
                       href={item.href}
                       className="group flex items-center gap-1.5 text-sm text-white/45 transition-colors duration-200 hover:text-white"
                     >
-                      <span className="h-px w-3 bg-white/20 transition-all duration-200 group-hover:w-4 group-hover:bg-cyan" />
+                      <span className="h-px w-3 bg-white/20 transition-all duration-200 group-hover:w-4" style={{ backgroundColor: undefined }} />
                       {item.label}
                     </Link>
                   </li>
@@ -145,7 +145,7 @@ export function Footer() {
           <Reveal delay={0.15} className="lg:col-span-3">
             <p
               className="mb-4 text-[11px] font-semibold tracking-wide"
-              style={{ color: "var(--color-cyan)" }}
+              style={{ color: "var(--color-yellow)" }}
             >
               Liên hệ
             </p>
@@ -154,8 +154,10 @@ export function Footer() {
                 <p className="text-[10px] font-medium uppercase tracking-widest text-white/30">Hotline</p>
                 <a
                   href={`tel:${company.hotline.replace(/\s/g, "")}`}
-                  className="mt-0.5 block font-semibold text-white transition-colors hover:text-cyan"
-                  style={{ fontFamily: "var(--font-display)" }}
+                  className="mt-0.5 block font-semibold text-white transition-colors"
+                  style={{ fontFamily: "var(--font-display)", color: "white" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-yellow)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "white")}
                 >
                   {company.hotline}
                 </a>
@@ -164,7 +166,9 @@ export function Footer() {
                 <p className="text-[10px] font-medium uppercase tracking-widest text-white/30">Email</p>
                 <a
                   href={`mailto:${company.email}`}
-                  className="mt-0.5 block text-sm text-white/55 transition-colors hover:text-cyan"
+                  className="mt-0.5 block text-sm text-white/55 transition-colors"
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-yellow)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "")}
                 >
                   {company.email}
                 </a>

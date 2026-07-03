@@ -14,14 +14,14 @@ export function ProcessSection() {
   return (
     <section
       className="relative section-pad"
-      style={{ background: "var(--color-ink)" }}
+      style={{ background: "var(--color-graphite)" }}
     >
       {/* Engineering grid */}
       <div className="eng-grid-dense absolute inset-0 opacity-15" />
 
       {/* Glowing orbs */}
-      <div className="absolute -left-40 top-0 h-96 w-96 rounded-full" style={{ background: "radial-gradient(circle, rgba(0,212,255,0.08) 0%, transparent 60%)" }} />
-      <div className="absolute -right-40 bottom-0 h-80 w-80 rounded-full" style={{ background: "radial-gradient(circle, rgba(0,170,204,0.06) 0%, transparent 60%)" }} />
+      <div className="absolute -left-40 top-0 h-96 w-96 rounded-full" style={{ background: "radial-gradient(circle, rgba(245,197,24,0.07) 0%, transparent 60%)" }} />
+      <div className="absolute -right-40 bottom-0 h-80 w-80 rounded-full" style={{ background: "radial-gradient(circle, rgba(212,160,23,0.05) 0%, transparent 60%)" }} />
 
       <div className="container-wide relative">
         <SectionHeading
@@ -36,7 +36,7 @@ export function ProcessSection() {
           {/* Vertical line */}
           <div
             className="absolute left-[22px] top-0 bottom-0 w-px hidden md:block"
-            style={{ background: "linear-gradient(180deg, var(--color-cyan), rgba(0,212,255,0.1))", opacity: 0.3 }}
+            style={{ background: "linear-gradient(180deg, var(--color-yellow), rgba(245,197,24,0.08))", opacity: 0.35 }}
           />
 
           <div className="grid gap-0 md:gap-0">
@@ -53,7 +53,7 @@ export function ProcessSection() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: i * 0.09 + 0.2, ease }}
                       style={{
-                        background: "var(--color-cyan)",
+                        background: "var(--color-yellow)",
                         clipPath: "polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px))",
                         fontFamily: "var(--font-mono)",
                       }}
@@ -76,11 +76,11 @@ export function ProcessSection() {
                       whileInView={{ width: 24 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: i * 0.09 + 0.35, ease: easeOut }}
-                      style={{ background: "var(--color-cyan)" }}
+                      style={{ background: "var(--color-yellow)" }}
                     />
 
                     <h3
-                      className="text-lg font-semibold text-white transition-colors duration-300 group-hover:text-cyan md:text-xl"
+                      className="text-lg font-semibold text-white transition-colors duration-300 group-hover:text-yellow md:text-xl"
                       style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.025em" }}
                     >
                       {step.title}

@@ -5,7 +5,6 @@ import { CTASection } from "@/components/CTASection";
 import { HeroSection } from "@/components/HeroSection";
 import { MilestonesSection } from "@/components/MilestonesSection";
 import { SectionHeading } from "@/components/SectionHeading";
-import { StatsSection } from "@/components/StatsSection";
 import { ProjectShowcaseSection } from "@/components/ProjectShowcaseSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { company } from "@/data/company";
@@ -118,7 +117,7 @@ export default function AboutPage() {
       </section>
 
       <ProjectShowcaseSection />
-      <StatsSection />
+
       <MilestonesSection />
       <CapabilitiesSection limit={4} />
       <TestimonialsSection />
