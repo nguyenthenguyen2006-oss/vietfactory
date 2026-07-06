@@ -20,7 +20,7 @@ export default function ContactPage() {
         backgroundImage="/images/labaco/Nghia-Do.jpg"
       />
 
-      <section className="section-pad bg-surface">
+      <section id="form-lien-he" className="section-pad scroll-mt-20 bg-surface">
         <div className="container-wide">
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-5">

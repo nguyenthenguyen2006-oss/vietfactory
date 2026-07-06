@@ -6,6 +6,7 @@ import { ProcessSection } from "@/components/ProcessSection";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ServiceCard } from "@/components/ServiceCard";
 import { ProjectShowcaseSection } from "@/components/ProjectShowcaseSection";
+import { RealCapabilitySection } from "@/components/RealCapabilitySection";
 import { WhyUsSection } from "@/components/WhyUsSection";
 import { services } from "@/data/services";
 
@@ -38,6 +39,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <RealCapabilitySection />
 
       <ProjectShowcaseSection />
 

@@ -2,56 +2,65 @@
 
 /* ─── Design Tokens ─────────────────────────────────────────── */
 @theme {
-  /* Core palette */
-  --color-ink:        #08111f;
-  --color-steel:      #111d2e;
-  --color-slate:      #1a2d42;
-  --color-graphite:   #2a3d55;
-  --color-smoke:      #7a93aa;
-  --color-mist:       #a0b4c8;
-  --color-paper:      #fffdf5;
-  --color-white:      #ffffff;
+  /* ── Light industrial palette ── */
+  --color-cream:        #FFF9E8;   /* body bg */
+  --color-cream-alt:    #F7F2E3;   /* section secondary bg */
+  --color-cream-card:   #FEFCF4;   /* card warm white */
 
-  /* Accent — Golden Yellow */
-  --color-yellow:       #f5c518;
-  --color-yellow-deep:  #d4a017;
-  --color-yellow-glow:  rgba(245, 197, 24, 0.18);
-  --color-logo-yellow:  #f5c518;
+  /* Legacy paper → now cream */
+  --color-paper:        #FFF9E8;
+  --color-surface:      #F7F2E3;
+  --color-white:        #ffffff;
 
-  /* Legacy aliases — remapped to yellow */
-  --color-navy:         #08111f;
-  --color-navy-light:   #111d2e;
+  /* ── Text navy ── */
+  --color-ink:          #071525;   /* body text, headings */
+  --color-navy:         #071525;
+  --color-navy-light:   #102033;   /* secondary navy */
   --color-navy-mid:     #1a2d42;
-  --color-charcoal:     #1a2d42;
-  --color-slate-muted:  #7a93aa;
-  --color-cold:         #e8edf2;
-  --color-surface:      #fffdf5;
-  --color-accent:       #f5c518;
-  --color-accent-deep:  #d4a017;
-  --color-accent-glow:  rgba(245, 197, 24, 0.18);
+  --color-steel:        #111d2e;   /* footer dark */
+  --color-slate:        #1a2d42;
+  --color-graphite:     #102033;   /* dark section bg */
 
-  /* Cyan kept for backward compat but remapped to yellow */
-  --color-cyan:         #f5c518;
-  --color-cyan-deep:    #d4a017;
-  --color-cyan-glow:    rgba(245, 197, 24, 0.18);
+  /* ── Muted / sub-text ── */
+  --color-smoke:        #5C7089;   /* descriptions, meta */
+  --color-mist:         #8099B0;
+  --color-slate-muted:  #5C7089;
+  --color-charcoal:     #102033;
+  --color-cold:         rgba(7,21,37,0.08);
 
-  /* Fonts */
+  /* ── Accent — Golden Yellow ── */
+  --color-yellow:       #FFC400;
+  --color-yellow-deep:  #E6A800;
+  --color-yellow-glow:  rgba(255,196,0,0.18);
+  --color-logo-yellow:  #FFC400;
+
+  /* Legacy accent aliases */
+  --color-accent:       #FFC400;
+  --color-accent-deep:  #E6A800;
+  --color-accent-glow:  rgba(255,196,0,0.18);
+
+  /* Cyan remapped to yellow */
+  --color-cyan:         #FFC400;
+  --color-cyan-deep:    #E6A800;
+  --color-cyan-glow:    rgba(255,196,0,0.18);
+
+  /* ── Fonts ── */
   --font-display: var(--font-syne), "Syne", system-ui, sans-serif;
   --font-sans:    var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
   --font-mono:    var(--font-dm-mono), "DM Mono", ui-monospace, monospace;
 
-  /* Shadows */
-  --shadow-sm:  0 2px 16px rgba(8, 17, 31, 0.12);
-  --shadow-md:  0 8px 40px rgba(8, 17, 31, 0.20);
-  --shadow-lg:  0 20px 80px rgba(8, 17, 31, 0.35);
-  --shadow-cyan:    0 8px 32px rgba(245, 197, 24, 0.28);
-  --shadow-yellow:  0 8px 32px rgba(245, 197, 24, 0.28);
+  /* ── Shadows ── */
+  --shadow-sm:      0 2px 12px rgba(7,21,37,0.08);
+  --shadow-md:      0 8px 32px rgba(7,21,37,0.12);
+  --shadow-lg:      0 20px 64px rgba(7,21,37,0.18);
+  --shadow-yellow:  0 6px 24px rgba(255,196,0,0.28);
 
-  /* Legacy shadow aliases */
-  --shadow-navy-sm: 0 2px 16px rgba(8, 17, 31, 0.12);
-  --shadow-navy-md: 0 8px 40px rgba(8, 17, 31, 0.20);
-  --shadow-navy-lg: 0 20px 80px rgba(8, 17, 31, 0.35);
-  --shadow-accent:  0 8px 32px rgba(245, 197, 24, 0.28);
+  /* Legacy aliases */
+  --shadow-navy-sm: 0 2px 12px rgba(7,21,37,0.08);
+  --shadow-navy-md: 0 8px 32px rgba(7,21,37,0.12);
+  --shadow-navy-lg: 0 20px 64px rgba(7,21,37,0.18);
+  --shadow-accent:  0 6px 24px rgba(255,196,0,0.28);
+  --shadow-cyan:    0 6px 24px rgba(255,196,0,0.28);
 }
 
 /* ─── Base ───────────────────────────────────────────────────── */
@@ -66,7 +75,9 @@
   }
 
   body {
-    @apply bg-paper text-ink antialiased;
+    @apply antialiased;
+    background-color: var(--color-cream);
+    color: var(--color-ink);
     font-family: var(--font-sans);
     font-weight: 400;
     line-height: 1.7;
@@ -77,11 +88,12 @@
     line-height: 1.1;
     letter-spacing: -0.03em;
     font-weight: 700;
+    color: var(--color-ink);
   }
 
   ::selection {
-    background: rgba(245, 197, 24, 0.30);
-    color: #08111f;
+    background: rgba(255, 196, 0, 0.28);
+    color: #071525;
   }
 
   * {
@@ -109,38 +121,57 @@
   .bg-ink    { background-color: var(--color-ink); }
   .bg-steel  { background-color: var(--color-steel); }
   .bg-slate  { background-color: var(--color-slate); }
-  .bg-paper  { background-color: var(--color-paper); }
+  .bg-paper  { background-color: var(--color-cream); }
+  .bg-cream  { background-color: var(--color-cream); }
+  .bg-cream-alt { background-color: var(--color-cream-alt); }
 
+  /* ── Dark section mesh — navy deep (used sparingly) ── */
   .mesh-dark,
   .mesh-navy {
     background:
-      radial-gradient(ellipse 70% 50% at 15% 10%, rgba(245,197,24,0.07) 0%, transparent 60%),
-      radial-gradient(ellipse 50% 40% at 85% 90%, rgba(212,160,23,0.05) 0%, transparent 50%),
-      linear-gradient(175deg, #08111f 0%, #111d2e 60%, #0d1827 100%);
+      radial-gradient(ellipse 60% 50% at 15% 10%, rgba(255,196,0,0.06) 0%, transparent 55%),
+      radial-gradient(ellipse 40% 40% at 85% 90%, rgba(230,168,0,0.04) 0%, transparent 50%),
+      linear-gradient(175deg, #071525 0%, #102033 60%, #0c1d30 100%);
   }
 
+  /* ── Light section mesh — cream (main use) ── */
   .mesh-light,
   .mesh-surface {
     background:
-      radial-gradient(ellipse 60% 40% at 0% 0%, rgba(245,197,24,0.06) 0%, transparent 50%),
-      radial-gradient(ellipse 40% 30% at 100% 100%, rgba(8,17,31,0.04) 0%, transparent 45%),
-      #f4f6f8;
+      radial-gradient(ellipse 50% 40% at 0% 0%, rgba(255,196,0,0.05) 0%, transparent 50%),
+      radial-gradient(ellipse 40% 30% at 100% 100%, rgba(7,21,37,0.03) 0%, transparent 45%),
+      var(--color-cream);
   }
 
-  /* ── Engineering Grid ── */
+  /* ── Engineering Grid — subtler on light bg ── */
   .eng-grid,
   .industrial-grid {
     background-image:
-      linear-gradient(rgba(245,197,24,0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(245,197,24,0.05) 1px, transparent 1px);
+      linear-gradient(rgba(7,21,37,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(7,21,37,0.04) 1px, transparent 1px);
     background-size: 64px 64px;
   }
 
   .eng-grid-dense,
   .industrial-grid-dense {
     background-image:
-      linear-gradient(rgba(245,197,24,0.07) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(245,197,24,0.07) 1px, transparent 1px);
+      linear-gradient(rgba(7,21,37,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(7,21,37,0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* ── Engineering Grid for dark sections ── */
+  .eng-grid-dark {
+    background-image:
+      linear-gradient(rgba(255,196,0,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,196,0,0.05) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .eng-grid-dark-dense {
+    background-image:
+      linear-gradient(rgba(255,196,0,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,196,0,0.07) 1px, transparent 1px);
     background-size: 32px 32px;
   }
 
@@ -148,12 +179,20 @@
   .noise-overlay,
   .grain-overlay {
     pointer-events: none;
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAGFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANYy02AAAACHRSTlMA/////////9ECcwYAAAEcSURBVDjLpZTbEsMgCEQhQO5R8v+/OQ+dmZ3tNIt9wMgBCTP+q/n4V8f8sxiP2UWMZ0zOImYxKWMW07k4z8VcxHQuliKmcykWE/1YLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyG/wO4h9p2sE2bZAAAAABJRU5ErkJggg==");
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAGFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANYy02AAAACHRSTlMA/////////9ECcwYAAAEcSURBVDjLpZTbEsMgCEQhQO5R8v+/OQ+dmZ3tNIt9wMgBCTP+q/n4V8f8sxiP2UWMZ0zOImYxKWMW07k4z8VcxHQuliKmcykWE/1YLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyGy1gsFstYLIbLWCyG/wO4h9p2sE2bZAAAAABJRU5ErkJggg==");
     background-size: 64px 64px;
-    opacity: 0.06;
+    opacity: 0.04;
   }
 
-  /* ── Glass ── */
+  /* ── Glass — light header glassmorphism ── */
+  .glass-header {
+    background: rgba(255,249,232,0.92);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid rgba(255,196,0,0.18);
+    box-shadow: 0 4px 24px rgba(7,21,37,0.08);
+  }
+
   .glass-dark,
   .glass-panel {
     border: 1px solid rgba(255,255,255,0.10);
@@ -162,13 +201,13 @@
     -webkit-backdrop-filter: blur(24px) saturate(160%);
     box-shadow:
       inset 0 1px 0 rgba(255,255,255,0.15),
-      0 24px 64px rgba(8,17,31,0.40);
+      0 24px 64px rgba(7,21,37,0.35);
   }
 
   .glass-light,
   .glass-panel-light {
-    border: 1px solid rgba(8,17,31,0.07);
-    background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,255,255,0.72));
+    border: 1px solid rgba(7,21,37,0.07);
+    background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.80));
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     box-shadow: var(--shadow-sm);
@@ -197,14 +236,47 @@
   .btn-primary:hover {
     background: var(--color-yellow-deep);
     transform: translateY(-2px);
-    box-shadow: 0 16px 48px rgba(245,197,24,0.40);
+    box-shadow: 0 12px 36px rgba(255,196,0,0.38);
   }
 
   .btn-primary:active {
     transform: translateY(0) scale(0.98);
   }
 
+  /* Ghost — light context (on cream backgrounds) */
   .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 27px;
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--color-ink);
+    background: rgba(255,255,255,0.72);
+    border: 1px solid rgba(7,21,37,0.15);
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+  }
+
+  .btn-ghost:hover {
+    border-color: rgba(255,196,0,0.50);
+    color: var(--color-ink);
+    background: rgba(255,249,232,0.90);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(255,196,0,0.14);
+  }
+
+  .btn-ghost:active {
+    transform: scale(0.98);
+  }
+
+  /* Ghost dark — for use on navy/dark sections */
+  .btn-ghost-dark {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -223,14 +295,14 @@
     backdrop-filter: blur(8px);
   }
 
-  .btn-ghost:hover {
-    border-color: rgba(245,197,24,0.50);
+  .btn-ghost-dark:hover {
+    border-color: rgba(255,196,0,0.50);
     color: #ffffff;
-    background: rgba(245,197,24,0.10);
+    background: rgba(255,196,0,0.10);
     transform: translateY(-2px);
   }
 
-  .btn-ghost:active {
+  .btn-ghost-dark:active {
     transform: scale(0.98);
   }
 
@@ -240,7 +312,7 @@
                 box-shadow 0.4s cubic-bezier(0.16,1,0.3,1);
   }
   .card-lift:hover {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
     box-shadow: var(--shadow-md);
   }
 
@@ -253,17 +325,17 @@
 
   /* ── Yellow glow ── */
   .glow-accent {
-    box-shadow: 0 0 0 1px rgba(245,197,24,0.30), var(--shadow-yellow);
+    box-shadow: 0 0 0 1px rgba(255,196,0,0.30), var(--shadow-yellow);
   }
 
-  /* ── Engineering number (ghost behind section) ── */
+  /* ── Engineering ghost number (on light bg) ── */
   .ghost-number {
     font-family: var(--font-display);
     font-weight: 800;
     font-size: clamp(80px, 14vw, 200px);
     line-height: 1;
     letter-spacing: -0.05em;
-    background: linear-gradient(180deg, rgba(245,197,24,0.12) 0%, transparent 100%);
+    background: linear-gradient(180deg, rgba(7,21,37,0.06) 0%, transparent 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -271,13 +343,14 @@
     pointer-events: none;
   }
 
+  /* ── Engineering ghost number (on dark bg) ── */
   .ghost-number-dark {
     font-family: var(--font-display);
     font-weight: 800;
     font-size: clamp(80px, 14vw, 200px);
     line-height: 1;
     letter-spacing: -0.05em;
-    background: linear-gradient(180deg, rgba(255,255,255,0.07) 0%, transparent 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -304,7 +377,7 @@
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.08em;
-    color: var(--color-yellow);
+    color: var(--color-yellow-deep);
   }
 
   .section-label::before {
@@ -360,9 +433,14 @@
 }
 
 @media (prefers-reduced-transparency: reduce) {
+  .glass-header {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(255,249,232,0.98);
+  }
   .glass-dark, .glass-light, .glass-panel, .glass-panel-light {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    background: rgba(8, 17, 31, 0.94);
+    background: #ffffff;
   }
 }

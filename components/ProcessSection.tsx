@@ -14,10 +14,10 @@ export function ProcessSection() {
   return (
     <section
       className="relative section-pad"
-      style={{ background: "var(--color-graphite)" }}
+      style={{ background: "#102033" }}
     >
       {/* Engineering grid */}
-      <div className="eng-grid-dense absolute inset-0 opacity-15" />
+      <div className="eng-grid-dark-dense absolute inset-0 opacity-40" />
 
       {/* Glowing orbs */}
       <div className="absolute -left-40 top-0 h-96 w-96 rounded-full" style={{ background: "radial-gradient(circle, rgba(245,197,24,0.07) 0%, transparent 60%)" }} />
@@ -66,7 +66,7 @@ export function ProcessSection() {
                   <div
                     className="md:col-span-11 relative pb-8 transition-colors duration-300 md:pb-0"
                     style={{
-                      borderBottom: i < company.process.length - 1 ? "1px solid rgba(255,255,255,0.06)" : "none",
+                      borderBottom: i < company.process.length - 1 ? "1px solid rgba(255,255,255,0.05)" : "none",
                     }}
                   >
                     {/* Step connector line on hover */}

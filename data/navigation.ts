@@ -10,6 +10,7 @@ export const footerNav = {
   company: [
     { label: "Giới thiệu", href: "/gioi-thieu" },
     { label: "Năng lực", href: "/nang-luc" },
+    { label: "Dự án thực tế", href: "/nang-luc-thuc-te" },
     { label: "Liên hệ", href: "/lien-he" },
   ],
   services: [

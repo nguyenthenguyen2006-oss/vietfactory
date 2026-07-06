@@ -22,7 +22,7 @@ export function CTASection({
   return (
     <section
       className="relative overflow-hidden section-pad"
-      style={{ background: dark ? "var(--color-slate)" : "var(--color-paper)" }}
+      style={{ background: dark ? "#102033" : "var(--color-cream)" }}
     >
       {/* Engineering grid */}
       {dark && <div className="eng-grid absolute inset-0 opacity-20" />}

@@ -7,10 +7,10 @@ import { motion } from "motion/react";
 import { Reveal } from "@/components/motion/Reveal";
 import { ProjectLightbox } from "@/components/ProjectLightbox";
 import { SectionHeading } from "@/components/SectionHeading";
-import { solutionShowcase, toGallery } from "@/data/labaco-showcase";
+import { homepageCapabilityShowcase } from "@/data/real-projects";
 import { useState } from "react";
 
-const gallery = toGallery(solutionShowcase);
+const gallery = homepageCapabilityShowcase;
 const tileClasses = [
   "md:col-span-7 md:row-span-2",
   "md:col-span-5",
@@ -28,7 +28,7 @@ export function ProjectShowcaseSection() {
       <div className="container-wide">
         <SectionHeading
           title="Một hệ thống, sáu năng lực"
-          description="Từ nhà xưởng đến phòng sạch, mỗi giải pháp được triển khai theo đúng yêu cầu vận hành."
+          description="Kho lạnh, phòng sạch, thiết bị lạnh, kho hàng và xe nâng được triển khai đồng bộ theo yêu cầu vận hành."
         />
 
         <div className="mt-12 grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-12">
@@ -69,10 +69,10 @@ export function ProjectShowcaseSection() {
 
         <div className="mt-10 flex justify-center">
           <Link
-            href="/dich-vu"
+            href="/nang-luc-thuc-te"
             className="inline-flex items-center gap-2 text-sm font-semibold text-accent transition-colors hover:text-navy"
           >
-            Khám phá toàn bộ dịch vụ
+            Xem năng lực thực tế
             <ArrowRight size={16} weight="bold" />
           </Link>
         </div>

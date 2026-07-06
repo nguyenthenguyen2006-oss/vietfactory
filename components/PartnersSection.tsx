@@ -17,9 +17,18 @@ export function PartnersSection() {
               <motion.div
                 whileHover={{ y: -4, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 22 }}
-                className="flex flex-col items-center justify-center rounded-sm border border-cold bg-surface px-4 py-7 text-center transition-colors hover:border-accent/30 hover:bg-white hover:shadow-[var(--shadow-navy-sm)] md:py-9"
+                className="flex flex-col items-center justify-center rounded-sm px-4 py-7 text-center transition-all duration-300 md:py-9"
+                style={{
+                  background: "white",
+                  border: "1px solid rgba(7,21,37,0.05)",
+                  boxShadow: "0 1px 6px rgba(7,21,37,0.04)",
+                }}
+                onMouseEnter={(e) => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "rgba(255,196,0,0.30)"; el.style.boxShadow = "0 4px 16px rgba(7,21,37,0.08)"; }}
+                onMouseLeave={(e) => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "rgba(7,21,37,0.05)"; el.style.boxShadow = "0 1px 6px rgba(7,21,37,0.04)"; }}
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-sm bg-navy text-xl font-bold text-accent">
+                <div 
+                  className="flex h-14 w-14 items-center justify-center rounded-sm text-xl font-bold"
+                  style={{ background: "rgba(255,196,0,0.12)", color: "var(--color-yellow-deep)", fontFamily: "var(--font-display)" }}>
                   {partner.name.charAt(0)}
                 </div>
                 <p className="mt-3 text-base font-semibold text-navy">{partner.name}</p>

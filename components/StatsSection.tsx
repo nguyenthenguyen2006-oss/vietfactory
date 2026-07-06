@@ -18,7 +18,7 @@ export function StatsSection() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative overflow-hidden" style={{ background: "#fffdf5" }}>
+    <section className="relative overflow-hidden" style={{ background: "var(--color-cream)" }}>
       {/* Engineering grid overlay */}
       <div className="eng-grid absolute inset-0 opacity-20" />
 
@@ -47,7 +47,7 @@ export function StatsSection() {
               <div
                 className="group relative px-6 py-8 transition-colors duration-300 hover:bg-yellow/5"
                 style={{
-                  borderRight: i < stats.length - 1 ? "1px solid rgba(8,17,31,0.08)" : "none",
+                  borderRight: i < stats.length - 1 ? "1px solid rgba(7,21,37,0.07)" : "none",
                 }}
               >
                 {/* Number */}
@@ -60,7 +60,6 @@ export function StatsSection() {
                     lineHeight: 1,
                     letterSpacing: "-0.04em",
                     color: "var(--color-yellow)",
-                    transition: "color 0.3s",
                   }}
                 >
                   <AnimatedCounter
@@ -68,7 +67,7 @@ export function StatsSection() {
                     className=""
                   />
                   {stat.suffix && (
-                    <span style={{ fontSize: "0.55em", color: "rgba(245,197,24,0.70)", marginBottom: "0.1em" }}>
+                    <span style={{ fontSize: "0.55em", color: "rgba(255,196,0,0.72)", marginBottom: "0.1em" }}>
                       {stat.suffix}
                     </span>
                   )}
@@ -76,8 +75,8 @@ export function StatsSection() {
 
                 {/* Label */}
                 <p
-                  className="mt-2 text-xs font-medium tracking-wide"
-                  style={{ color: "#4b5e72" }}
+                  className="mt-2 text-xs font-medium tracking-wide uppercase"
+                  style={{ color: "var(--color-smoke)" }}
                 >
                   {stat.label}
                 </p>

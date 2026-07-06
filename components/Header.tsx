@@ -38,7 +38,7 @@ export function Header() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
         solid
-          ? "border-b border-white/8 bg-ink/95 shadow-[0_4px_24px_rgba(8,17,31,0.35)] backdrop-blur-xl"
+          ? "glass-header"
           : "bg-transparent"
       )}
     >
@@ -48,8 +48,9 @@ export function Header() {
           <motion.span
             whileHover={{ scale: 1.06 }}
             whileTap={{ scale: 0.94 }}
-            className="flex h-8 w-8 items-center justify-center text-[11px] font-bold tracking-wider text-ink transition-all duration-200"
+            className="flex h-8 w-8 items-center justify-center text-[11px] font-bold tracking-wider transition-all duration-200"
             style={{
+              color: "var(--color-ink)",
               background: "var(--color-logo-yellow)",
               clipPath: "polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px))",
               fontFamily: "var(--font-display)",
@@ -61,7 +62,7 @@ export function Header() {
             className="text-sm font-semibold tracking-tight transition-colors duration-300"
             style={{
               fontFamily: "var(--font-display)",
-              color: "rgba(255,255,255,0.92)",
+              color: solid ? "var(--color-ink)" : "rgba(255,255,255,0.95)",
             }}
           >
             {company.name}
@@ -78,9 +79,13 @@ export function Header() {
                 href={item.href}
                 className={cn(
                   "group relative flex items-center gap-1.5 px-3.5 py-2 text-[13px] font-medium tracking-wide transition-colors duration-200",
-                  active
-                    ? "text-yellow"
-                    : "text-white/55 hover:text-white/90"
+                  solid
+                    ? active
+                      ? "text-yellow"
+                      : "text-ink/60 hover:text-ink"
+                    : active
+                      ? "text-yellow"
+                      : "text-white/70 hover:text-white"
                 )}
                 style={{ fontFamily: "var(--font-display)" }}
               >
@@ -109,9 +114,10 @@ export function Header() {
         <div className="flex items-center gap-3">
           <Link
             href="/lien-he"
-            className="hidden sm:inline-flex items-center gap-1.5 px-5 py-2 text-[13px] font-semibold text-ink transition-all duration-200 hover:-translate-y-px"
+            className="hidden sm:inline-flex items-center gap-1.5 px-5 py-2 text-[13px] font-semibold transition-all duration-200 hover:-translate-y-px"
             style={{
               fontFamily: "var(--font-display)",
+              color: "var(--color-ink)",
               background: "var(--color-yellow)",
               clipPath: "polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))",
               boxShadow: "var(--shadow-yellow)",
@@ -124,7 +130,8 @@ export function Header() {
             type="button"
             aria-label="Mở menu"
             onClick={() => setMobileOpen(true)}
-            className="inline-flex h-9 w-9 items-center justify-center text-white/70 transition-colors hover:text-white lg:hidden"
+            className="inline-flex h-9 w-9 items-center justify-center transition-colors lg:hidden"
+            style={{ color: solid ? "var(--color-ink)" : "rgba(255,255,255,0.80)" }}
           >
             <List size={22} weight="bold" />
           </button>
@@ -140,13 +147,13 @@ export function Header() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-50 lg:hidden"
-            style={{ background: "rgba(8,17,31,0.98)", backdropFilter: "blur(16px)" }}
+            style={{ background: "rgba(255,249,232,0.97)", backdropFilter: "blur(20px)" }}
           >
             {/* Mobile header */}
-            <div className="flex h-[60px] items-center justify-between px-5">
+            <div className="flex h-[60px] items-center justify-between px-5" style={{ borderBottom: "1px solid rgba(7,21,37,0.08)" }}>
               <span
-                className="text-sm font-semibold text-white"
-                style={{ fontFamily: "var(--font-display)" }}
+                className="text-sm font-semibold"
+                style={{ fontFamily: "var(--font-display)", color: "var(--color-ink)" }}
               >
                 {company.name}
               </span>
@@ -154,7 +161,8 @@ export function Header() {
                 type="button"
                 aria-label="Đóng menu"
                 onClick={() => setMobileOpen(false)}
-                className="text-white/60 transition-colors hover:text-white"
+                style={{ color: "var(--color-ink)" }}
+                className="opacity-60 transition-opacity hover:opacity-100"
               >
                 <X size={22} weight="bold" />
               </button>
@@ -173,17 +181,18 @@ export function Header() {
                   <Link
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className="flex items-center gap-3 border-b py-4 text-lg font-medium text-white/80 transition-colors hover:text-white"
+                    className="flex items-center gap-3 py-4 text-lg font-medium transition-colors hover:text-yellow"
                     style={{
-                      borderColor: "rgba(255,255,255,0.07)",
+                      borderBottom: "1px solid rgba(7,21,37,0.07)",
                       fontFamily: "var(--font-display)",
+                      color: "var(--color-ink)",
                     }}
                   >
                     <span
-                      className="font-mono text-[10px] text-yellow/60"
-                      style={{ fontFamily: "var(--font-mono)", color: "var(--color-yellow)", opacity: 0.5 }}
+                      className="font-mono text-[10px]"
+                      style={{ fontFamily: "var(--font-mono)", color: "var(--color-yellow)", opacity: 0.7 }}
                     >
-                      {String(i + 1).padStart(2, "0")}
+                      {String(i + 1).padStart(2, "00")}
                     </span>
                     {item.label}
                   </Link>
@@ -199,9 +208,10 @@ export function Header() {
                 <Link
                   href="/lien-he"
                   onClick={() => setMobileOpen(false)}
-                  className="block py-4 text-center text-sm font-semibold text-ink"
+                  className="block py-4 text-center text-sm font-semibold"
                   style={{
                     fontFamily: "var(--font-display)",
+                    color: "var(--color-ink)",
                     background: "var(--color-yellow)",
                     clipPath: "polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))",
                   }}

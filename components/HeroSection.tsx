@@ -58,9 +58,9 @@ export function HeroSection({
           sizes="100vw"
           quality={85}
         />
-        {/* Lighter overlay — image breathes through */}
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/50 to-ink/5" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/78 via-transparent to-ink/20" />
+        {/* Lighter overlay — image breathes through more */}
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/72 via-ink/38 to-ink/0" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/58 via-transparent to-ink/12" />
         {/* Engineering grid */}
         <div className="eng-grid absolute inset-0 opacity-15" />
         {/* Noise texture */}
@@ -144,7 +144,7 @@ export function HeroSection({
                   Xem dịch vụ
                   <ArrowRight size={16} weight="bold" />
                 </MagneticButton>
-                <MagneticButton href="/lien-he" className="btn-ghost">
+                <MagneticButton href="/lien-he" className="btn-ghost-dark">
                   Nhận tư vấn miễn phí
                 </MagneticButton>
               </motion.div>

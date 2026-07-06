@@ -51,6 +51,9 @@ export function ProjectLightbox({
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-[100] flex items-center justify-center bg-navy/95 p-4 backdrop-blur-md"
           onClick={onClose}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Xem ảnh: ${current.label}`}
         >
           <button
             type="button"

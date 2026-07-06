@@ -13,12 +13,12 @@ export function VideoSection() {
   const activeVideo = videos.find((v) => v.youtubeId === activeId) ?? videos[0];
 
   return (
-    <section className="section-pad bg-navy">
+    <section className="section-pad" style={{ background: "var(--color-cream-alt)" }}>
       <div className="container-wide">
         <SectionHeading
           title="Video dự án"
           description="Hình ảnh thực tế từ công trường và quy trình triển khai công trình công nghiệp."
-          dark
+          dark={false}
         />
 
         <div className="mt-12 grid gap-8 lg:grid-cols-12">
@@ -44,7 +44,7 @@ export function VideoSection() {
                 </div>
               )}
             </div>
-            <p className="mt-4 text-lg font-medium text-white">{activeVideo?.title}</p>
+            <p className="mt-4 text-lg font-medium" style={{ color: "var(--color-ink)" }}>{activeVideo?.title}</p>
           </motion.div>
 
           <div className="grid grid-cols-2 gap-3 lg:col-span-4 lg:grid-cols-1">
@@ -76,7 +76,7 @@ export function VideoSection() {
                     <Play size={24} weight="fill" className="text-white" />
                   </div>
                 </div>
-                <p className="mt-2 text-sm font-medium text-white md:text-base">
+                <p className="mt-2 text-sm font-medium md:text-base" style={{ color: "var(--color-smoke)" }}>
                   {video.title}
                 </p>
               </button>

@@ -11,7 +11,7 @@ export function Footer() {
   return (
     <footer
       className="relative overflow-hidden"
-      style={{ background: "var(--color-steel)", color: "white" }}
+      style={{ background: "#111d2e", color: "white" }}
     >
       {/* Engineering grid */}
       <div className="eng-grid-dense absolute inset-0 opacity-10" />

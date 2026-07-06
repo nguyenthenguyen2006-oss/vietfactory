@@ -67,21 +67,28 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-navy">
+      <section className="section-pad" style={{ background: "var(--color-cream-alt)" }}>
         <div className="container-wide">
           <SectionHeading
             title="Giá trị cốt lõi"
             description="Nền tảng cho mọi quyết định thiết kế và triển khai dự án."
-            dark
+            dark={false}
           />
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
             {company.values.map((value) => (
               <div
                 key={value.title}
-                className="rounded-sm border border-white/10 p-6 md:p-8"
+                className="rounded-sm p-6 md:p-8"
+                style={{
+                  background: "white",
+                  border: "1px solid rgba(255,196,0,0.20)",
+                  boxShadow: "0 2px 12px rgba(7,21,37,0.05)",
+                }}
               >
-                <h3 className="text-lg font-semibold text-white">{value.title}</h3>
-                <p className="mt-3 text-base leading-relaxed text-white/70 md:text-lg">
+                <h3 className="text-lg font-semibold" style={{ color: "var(--color-ink)" }}>
+                  {value.title}
+                </h3>
+                <p className="mt-3 text-base leading-relaxed md:text-lg" style={{ color: "var(--color-smoke)" }}>
                   {value.description}
                 </p>
               </div>
@@ -90,7 +97,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-pad">
+      <section className="section-pad" style={{ background: "var(--color-cream)" }}>
         <div className="container-wide">
           <div className="grid items-center gap-12 lg:grid-cols-12">
             <div className="relative aspect-[16/10] overflow-hidden rounded-sm lg:col-span-7">
