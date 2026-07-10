@@ -5,9 +5,9 @@ export const company = {
     "Đơn vị tư vấn thiết kế, thi công nhà xưởng, kho lạnh, phòng sạch và giải pháp công trình công nghiệp theo tiêu chuẩn kỹ thuật.",
   aboutLong:
     "Với hơn 12 năm kinh nghiệm, VietFactory triển khai giải pháp trọn gói từ khảo sát, thiết kế 3D, thi công đến bàn giao cho nhà đầu tư trong và ngoài nước. Chúng tôi phục vụ đa ngành: thực phẩm, dược phẩm, điện tử, logistics, may mặc và cơ khí, với thế mạnh kho lạnh, phòng sạch GMP, xe nâng công nghiệp và thiết bị kho lạnh.",
-  hotline: "0900 000 000",
-  email: "contact@vietfactory.vn",
-  address: "Khu công nghiệp, Bình Dương, Việt Nam",
+  hotline: "0981 956 111",
+  email: "Vietfactoryvietnam@gmail.com",
+  address: "Tầng 3, Tháp A, Tòa T608, Tôn Quang Phiệt, Phường Nghĩa Đô, TP Hà Nội",
   workingHours: "Thứ 2 - Thứ 7 · 8:00 - 17:30",
   social: {
     facebook: "#",

@@ -60,7 +60,7 @@ export function ContactForm({ variant = "dark" }: ContactFormProps) {
           <label htmlFor="phone" className={labelClass}>
             Số điện thoại
           </label>
-          <input id="phone" name="phone" required className={inputClass} placeholder="0900 000 000" />
+          <input id="phone" name="phone" required className={inputClass} placeholder="0981 956 111" />
         </div>
       </div>
       <div>
